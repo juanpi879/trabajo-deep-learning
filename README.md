@@ -14,7 +14,6 @@ Proyecto de prediccion e inteligencia deportiva para simular el Mundial 2026 con
 
 - `app_streamlit.py`: dashboard principal.
 - `requirements.txt`: dependencias del proyecto.
-- `DOCUMENTACION_FLUJO.md`: documentacion express del flujo de trabajo.
 - `notebooks/`: notebooks del proceso completo.
 - `artifacts/data/`: datos procesados usados por la app.
 - `artifacts/models/`: modelos entrenados.
@@ -49,4 +48,7 @@ http://localhost:8501
 
 ## Nota
 
-El dashboard usa `artifacts/models/dashboard_sklearn.pkl` para evitar problemas de compatibilidad de TensorFlow en entornos locales.
+El dashboard usa directamente el modelo de Deep Learning entrenado en `notebooks/02_modelos_deep_learning.ipynb`
+(`artifacts/models/dashboard_model.keras` + `artifacts/models/model_bundle.pkl` con el scaler y las columnas de
+features). No hay ningun modelo alterno: las predicciones del simulador salen de la misma red neuronal (MLP)
+comparada y evaluada en el notebook 02.
